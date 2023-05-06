@@ -6,9 +6,9 @@ import { getPosts } from "@/app/get-posts";
 import commaNumber from "comma-number";
 
 export default async function AboutOG() {
-  // rauchg photo
-  const rauchgPhoto = fetch(
-    new URL(`../../public/images/rauchg-3d4cecf.gray.jpg`, import.meta.url)
+  // javiergradiche photo
+  const javiergradichePhoto = fetch(
+    new URL(`../../public/images/javiergradiche-3d4cecf.gray.png`, import.meta.url)
   ).then(res => res.arrayBuffer());
 
   // fonts
@@ -48,16 +48,16 @@ export default async function AboutOG() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 tw="rounded-full h-74"
-                alt="Guillermo Rauch"
+                alt="Javier Gradiche"
                 src={`data:image/jpeg;base64,${Buffer.from(
-                  await rauchgPhoto
+                  await javiergradichePhoto
                 ).toString("base64")}`}
               />
             </div>
 
             <div tw="flex flex-col px-10 grow text-[28px] h-70 justify-center">
               <div tw="text-[64px] mb-7" style={font("Inter 500")}>
-                Guillermo Rauch
+                Javier Gradiche
               </div>
               <div tw="flex mb-5" style={font("Roboto Mono 400")}>
                 <span tw="text-gray-400 mr-3">&mdash;</span> CEO and Founder of
