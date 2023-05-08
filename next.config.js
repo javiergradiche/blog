@@ -19,7 +19,7 @@ module.exports = withMDX({
   headers() {
     return [
       {
-        source: "/images/javiergradiche-3d4cecf.jpg",
+        source: "/images/javiergradiche.jpg",
         headers: [
           {
             key: "cache-control",
