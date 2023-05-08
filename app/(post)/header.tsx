@@ -13,6 +13,7 @@ export function Header({ posts }: { posts: Post[] }) {
   // segments can be:
   // date/post
   // lang/date/post
+
   const initialPost = posts.find(
     post => post.id === segments[segments.length - 1]
   );
@@ -54,7 +55,9 @@ export function Header({ posts }: { posts: Post[] }) {
            * In practice this is not an issue because we revalidate the entire page over time
            * and because we will move this to a server component with template.tsx at some point */}
           <span suppressHydrationWarning={true}>
-            {post.date} ({ago(post.date, true)} ago)
+            {/* {post.date} ({ago(post.date, true)} ago) */}
+            { getYear(post.date) }
+
           </span>
         </span>
 
@@ -89,4 +92,8 @@ function Views({ id, mutate, defaultValue }) {
   });
 
   return <>{views != null ? <span>{views} views</span> : null}</>;
+}
+
+function getYear(date: string) {
+  return new Date(date).getFullYear();
 }
